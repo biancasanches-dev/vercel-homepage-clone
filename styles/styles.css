@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
@@ -14,7 +13,7 @@
 *,
 input,
 button {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 html {
@@ -25,94 +24,141 @@ html {
 
 #wrapper {
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
   max-width: 104.8rem;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 1.6rem 2.4rem;
 }
-
 header .left {
   height: 2.6rem;
 }
-
 header .left img {
   height: 100%;
 }
-
 header .middle ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   list-style: none;
 }
-
 header .middle ul li a {
   font-size: 1.4rem;
   padding: 0.8rem 1.6rem;
   color: var(--gray);
   text-decoration: none;
 }
-
 header .middle ul li a + a {
   margin-left: 1.2rem;
 }
-
 header .right {
   margin-left: 0.8rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 header .right .conf {
   height: 3.2rem;
   position: relative;
 }
-
 header .right .conf span {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   color: var(--white);
   font-size: 1.4rem;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
-
 header .right .avatar {
   margin-left: 0.8rem;
   width: 3.2rem;
   height: 3.2rem;
+}
+
+@keyframes colorCycle {
+  0%, 55% {
+    filter: brightness(0) invert(1);
+  }
+  11%, 33% {
+    filter: none;
+  }
+}
+main {
+  max-width: 104.8rem;
+  padding: 5.6rem 2.4rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 12.8rem;
+  line-height: 100%;
+  letter-spacing: -1.24rem;
+  color: var(--white);
+}
+main h1 span {
+  filter: brightness(0) invert(1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorCycle 10s ease-in-out infinite;
+}
+main h1 span:nth-child(1) {
+  background-image: linear-gradient(90deg, #007cf0, #00dfd8);
+}
+main h1 span:nth-child(2) {
+  background-image: linear-gradient(90deg, #7928ca, #ff0080);
+  animation-delay: 3.33s;
+}
+main h1 span:nth-child(3) {
+  background-image: linear-gradient(90deg, #ff4d4d, #f9cb28);
+  animation-delay: 6.66s;
+}
+main .buttons {
+  margin-top: 6.4rem;
+  display: flex;
+  align-items: center;
+}
+main .buttons > button {
+  background: var(--white);
+  color: var(--black);
+  border-radius: 0.4rem;
+  margin: 1.2rem;
+  padding: 1.5rem 4.5rem;
+  border: 0.1rem solid var(--white);
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+main .buttons > button.outlined {
+  background-color: transparent;
+  color: var(--gray);
+  border: 0.1rem solid var(--gray);
+}
+main .buttons > button:hover {
+  background-color: transparent;
+  color: var(--white);
+  border: 0.1rem solid var(--white);
+}
+main h2 {
+  margin: 6.4rem 0;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.04rem;
 }
 
 footer {
@@ -123,5 +169,4 @@ footer {
   letter-spacing: 0.32rem;
   text-align: center;
   margin-bottom: 4.8rem;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
